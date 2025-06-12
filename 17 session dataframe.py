@@ -74,5 +74,17 @@ print(data_frame.sum(axis=1))
 
 # for all sum the values is add in columns by default if want to add value by rows then we changed the axis to 1
 
-# fetching cols from files 
+# fetching cols from files (we can fectch cols like same indexing we use name)
 print(movies["release_date"])
+
+# selecting rows from files 
+print(school_data.set_index("name",inplace=True))
+print(school_data.iloc[0:2])
+
+# now fetch rows by name
+
+print(school_data)
+print(school_data.loc["Abdullah"])
+
+# in both loc and iloc fancy indexing is possible
+print(school_data.loc[["Misbah","Amar","DAud"]])
