@@ -65,5 +65,14 @@ print("duplicates values", ipl.duplicated().sum())
 
 # rename (change the name of heading)
 
-data_frame.rename(columns={"name": "full name","roll no" : "class no"},inplace=True)
+data_frame.rename(columns={"iq": "iqss","marks" : "total_nums"},inplace=True)
 print(data_frame)
+
+# maths methods 
+
+print(data_frame.sum(axis=1))
+
+# for all sum the values is add in columns by default if want to add value by rows then we changed the axis to 1
+
+# fetching cols from files 
+print(movies["release_date"])
