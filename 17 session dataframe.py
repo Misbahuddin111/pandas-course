@@ -88,3 +88,10 @@ print(school_data.loc["Abdullah"])
 
 # in both loc and iloc fancy indexing is possible
 print(school_data.loc[["Misbah","Amar","DAud"]])
+
+import pandas as pd
+
+# Create a sample DataFrame
+data = {'A': [1, 2, 3, 4], 'B': [5, 6, 7, 8], 'C': [9, 10, 11, 12]}
+df = pd.DataFrame(data, index=['w', 'x', 'y', 'z'])
+print(df)
