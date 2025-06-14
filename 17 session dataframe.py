@@ -91,7 +91,25 @@ print(school_data.loc[["Misbah","Amar","DAud"]])
 
 import pandas as pd
 
-# Create a sample DataFrame
-data = {'A': [1, 2, 3, 4], 'B': [5, 6, 7, 8], 'C': [9, 10, 11, 12]}
-df = pd.DataFrame(data, index=['w', 'x', 'y', 'z'])
-print(df)
+
+
+
+'''
+Key Differences
+loc uses labels (e.g., 'x', 'A') and is inclusive of the end label.
+iloc uses integer indices (e.g., 0, 1) and is exclusive of the end index.
+Use loc for label-based indexing, iloc for position-based indexing.
+These examples cover common use cases for selecting data in pandas. Let me know if you need more specific scenarios!
+'''
+
+# selecting rows and columns
+# fetch data from files in rows and columns (movies.loc(columns,rows))
+
+print(movies.loc[0:5,"title_x":"poster_path"])
+
+# now by indexing 
+print(movies.iloc[0:4,0:3])
+
+# filtering data 
+# find all the winner team
+print(ipl.head(3))
