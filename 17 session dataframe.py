@@ -110,6 +110,6 @@ print(movies.loc[0:5,"title_x":"poster_path"])
 # now by indexing 
 print(movies.iloc[0:4,0:3])
 
-# filtering data 
-# find all the winner team
-print(ipl.head(3))
+# add new coloumns 
+new_columns = movies["country"]  = "india"
+print(movies)
