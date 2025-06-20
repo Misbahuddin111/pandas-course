@@ -172,3 +172,22 @@ Find movies with ratings between 7.5 and 8.5.
 print("Movies with rating >= 8.0:", movies[movies >= 8.0].size)
 print("\nMovies with rating between 7.5 and 8.5:\n", movies[(movies >= 7.5) & (movies <= 8.5)])
 
+
+ 
+#Q-1: Write a program to create an empty series
+
+empty_series = pd.Series()
+print(empty_series)
+
+
+# Write a Pandas program to add, subtract, multiple and divide two Pandas Series.
+first = pd.Series([1,2,3,4,5,6])
+second = pd.Series([7,8,9,0,3,4])
+additon = first + second
+print("sum",additon)
+
+subtraction = first - second
+print("subtraction ",subtraction)
+
+multiply = first * second
+print("multiply",multiply)
