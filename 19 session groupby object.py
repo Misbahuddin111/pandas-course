@@ -64,6 +64,40 @@ nth_data = grouped_data.nth(1)
 print("nth data",nth_data)
 
 print(genres.agg("sum"))
+# aggregation
 
-# passing list
-genres.agg(['min','max','mean','sum'])
+movies
+genres.agg(
+    {
+        "Runtime":["min","max"],
+        "IMDB_Rating":"max",
+        "No_of_Votes": "sum"
+    }
+)
+
+# Select only numeric columns for aggregation
+numeric_cols = movies.select_dtypes(include=np.number).columns
+genres[numeric_cols].agg(['min','max','mean','sum'])
+
+movies
+genres["Runtime"].agg(["mean","sum","min"])
+
+
+# group my multiple coulumns
+duo = movies.groupby(["Director","Star1"])
+duo.size()
+
+# find the most earning actor->director combo
+duo["Gross"].sum().sort_values(ascending=False).head(1)
+
+# find the best(in-terms of metascore(avg)) actor->genre combo
+movies.groupby(["Star1","Genre"])["Metascore"].mean().reset_index().sort_values("Metascore",ascending=False).head(1)
+
+
+# agg on multiple groupby
+duo.agg({
+  "Runtime": ["max","min","mean"],
+    "No_of_Votes": "sum",
+
+
+})

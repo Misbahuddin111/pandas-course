@@ -83,6 +83,9 @@ print(school_data.iloc[0:2])
 
 # now fetch rows by name
 
+#iloc - searches using index positions
+#loc - searches using index labels
+
 print(school_data)
 print(school_data.loc["Abdullah"])
 
@@ -111,5 +114,6 @@ print(movies.loc[0:5,"title_x":"poster_path"])
 print(movies.iloc[0:4,0:3])
 
 # add new coloumns 
-new_columns = movies["country"]  = "india"
-print(movies)
+# completely new
+movies['Country'] = 'India'
+movies.head()
