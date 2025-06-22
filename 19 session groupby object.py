@@ -60,6 +60,10 @@ last = grouped_data.last()
 print("last data",last)
 
 # nth 
-nth_data = grouped_data.nth(2)
+nth_data = grouped_data.nth(1)
 print("nth data",nth_data)
 
+print(genres.agg("sum"))
+
+# passing list
+genres.agg(['min','max','mean','sum'])
