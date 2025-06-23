@@ -101,3 +101,22 @@ duo.agg({
 
 
 })
+
+
+genres.get_group("Drama")
+
+
+import pandas as pd
+
+# Create a sample DataFrame
+data = {
+    'Category': ['A', 'A', 'B', 'B', 'A'],
+    'Region': ['North', 'South', 'North', 'South', 'North'],
+    'Sales': [100, 200, 300, 400, 150]
+}
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+
+# Group by 'Category' and 'Region
+df.groupby(["Category","Region"]).get_group(("B","North"))

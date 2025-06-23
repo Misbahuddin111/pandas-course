@@ -60,4 +60,3 @@ print(set_index.set_index("imdb_id"))
 # how to replace existing index without loosing
 print(set_index.reset_index().set_index("poster_path"))
 
-
