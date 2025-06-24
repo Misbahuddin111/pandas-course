@@ -97,4 +97,4 @@ StudentID 3 and 4 (from students_df) are excluded because they’re not in the r
 # Alternate syntax for merge
 # students.merge(regs)
 
-pd.merge(students,regs,how='inner',on='student_id')
+pd.merge(students,nov,how='inner',on='student_id')
