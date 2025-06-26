@@ -137,3 +137,48 @@ Unstacking makes data wider by moving row levels to columns.
 Use the level parameter to control which index level to pivo
 '''
 
+branch_df3 = pd.DataFrame(
+    [
+        [1,2,0,0],
+        [3,4,0,0],
+        [5,6,0,0],
+        [7,8,0,0],
+        [9,10,0,0],
+        [11,12,0,0],
+        [13,14,0,0],
+        [15,16,0,0],
+    ],
+    index = multiindex,
+    columns = pd.MultiIndex.from_product([['delhi','mumbai'],['avg_package','students']])
+)
+
+branch_df3
+
+# sort index
+# both -> descending -> diff order
+# based on one level
+branch_df3.sort_index(ascending=False)
+branch_df3.sort_index(ascending=[False,True])
+branch_df3.sort_index(level=0,ascending=[False])
+
+
+# melt 
+
+
+
+# Create the DataFrame
+df = pd.DataFrame(
+    {
+        'branch': ['cse', 'ece', 'mech'],
+        '2020': [100, 150, 60],
+        '2021': [120, 130, 80],
+        '2022': [150, 140, 70]
+    }
+)
+
+# Apply melt to reshape the DataFrame
+melted_df = df.melt(id_vars=["branch"],var_name='years',value_name="students")
+
+# Display the result
+print(melted_df)
+
