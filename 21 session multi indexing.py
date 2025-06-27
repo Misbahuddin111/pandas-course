@@ -182,3 +182,26 @@ melted_df = df.melt(id_vars=["branch"],var_name='years',value_name="students")
 # Display the result
 print(melted_df)
 
+# pivot table
+
+import pandas as pd
+
+# Sample DataFrame
+data = {
+    'Date': ['2023-01-01', '2023-01-01', '2023-01-02', '2023-01-02', '2023-01-03'],
+    'City': ['New York', 'Los Angeles', 'New York', 'Los Angeles', 'New York'],
+    'Category': ['Electronics', 'Electronics', 'Clothing', 'Clothing', 'Electronics'],
+    'Sales': [100, 150, 200, 120, 180],
+    'Quantity': [5, 7, 10, 6, 8]
+}
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+
+pivot1 = pd.pivot_table(df, 
+                        values='Sales', 
+                        index='City', 
+                        columns='Category', 
+                        aggfunc=['sum','mean','max'])
+print("\nPivot Table (Average Sales by City and Category):")
+print(pivot1)
