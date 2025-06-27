@@ -78,5 +78,17 @@ splitting names into first and last names helps with sorting or sending personal
 df['review_length'] = df['review'].str.len()
 print(df[['review', 'review_length']])
 
+'''
+Real-Life Use: In social media analysis,
+longer comments might indicate more detailed feedback, which you can prioritize.
+'''
+
+# str.startswith(), str.endswith()  Checks if text starts or ends with a specific word or character
+
+# Find reviews ending with "!"
+excited_reviews = df[df['review'].str.endswith('!')]
+print(excited_reviews)
+
+
 
 

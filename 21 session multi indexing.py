@@ -212,6 +212,7 @@ import pandas as pd
 import seaborn as sns
 
 
+
 '''
 
 total_bill	tip	sex	smoker	day	time	size
