@@ -89,6 +89,39 @@ longer comments might indicate more detailed feedback, which you can prioritize.
 excited_reviews = df[df['review'].str.endswith('!')]
 print(excited_reviews)
 
+# import titanic
+df = pd.read_csv('titanic.csv')
+df['Name']
+
+
+# replace
+df['title'] = df['title'].str.replace('Ms.','Miss.')
+df['title'] = df['title'].str.replace('Mlle.','Miss.')
 
 
 
+# filtering
+# startswith/endswith
+df[df['firstname'].str.endswith('A')]
+# isdigit/isalpha...
+df[df['firstname'].str.isdigit()]
+
+
+# applying regex
+# contains
+# search john -> both case
+df[df['firstname'].str.contains('john',case=False)]
+# find lastnames with start and end char vowel
+df[df['lastname'].str.contains('^[^aeiouAEIOU].+[^aeiouAEIOU]$')]
+
+
+# Common Functions
+# lower/upper/capitalize/title
+df['Name'].str.upper()
+df['Name'].str.capitalize()
+df['Name'].str.title()
+# len
+df['Name'][df['Name'].str.len() == 82].values[0]
+# strip
+"                   nitish                              ".strip()
+df['Name'].str.strip()
